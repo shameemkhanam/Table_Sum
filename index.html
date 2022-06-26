@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table Column Sum</title>
+  </head>
+  <body>
+    <table id="table" border="1">
+      <tr>
+        <th></th>
+        <th>Col 1</th>
+        <th>Col 2</th>
+        <th>Col 3</th>
+        <th>Col 4</th>
+        <th>Col 5</th>
+        <th>Col 6</th>
+
+
+      </tr>
+
+      <tr>
+        <th>row1</th>
+        <td>1050</td>
+        <td>2053</td>
+        <td>3046</td>
+        <td>4077</td>
+        <td>8077</td>
+        <td>9077</td>
+
+      </tr>
+
+      <tr>
+        <th>row2</th>
+        <td>1178</td>
+        <td>2248</td>
+        <td>3346</td>
+        <td>4455</td>
+        <td>4577</td>
+        <td>9047</td>
+      </tr>
+
+      <tr>
+        <th>row3</th>
+        <td>5044</td>
+        <td>6044</td>
+        <td>7330</td>
+        <td>8033</td>
+        <td>2347</td>
+        <td>9127</td>
+      </tr>
+
+      <tr>
+        <th>row4</th>
+        <td>9450</td>
+        <td>4330</td>
+        <td>3330</td>
+        <td>4054</td>
+        <td>4577</td>
+        <td>9067</td>
+      </tr>
+
+      <tr>
+        <th>row5</th>
+        <td>1450</td>
+        <td>2330</td>
+        <td>3330</td>
+        <td>4054</td>
+        <td>5577</td>
+        <td>6067</td>
+      </tr>
+
+      <tr>
+        <th>row6</th>
+        <td>9150</td>
+        <td>4320</td>
+        <td>3334</td>
+        <td>4654</td>
+        <td>4677</td>
+        <td>9087</td>
+      </tr>
+    </table>
+
+    <h3><span id="result1"></span></h3>
+    <h3><span id="result2"></span></h3>
+
+    <script>
+      let table = document.getElementById("table");
+      let colSum = 0;
+      for ( let i=1; i<table.rows.length; i++){
+        colSum = colSum + parseInt(table.rows[i].cells[6].innerHTML);
+      }
+      document.getElementById("result1").innerHTML = `Column no. 6 sum : ${colSum}`;
+
+      let rowSum = 0;
+      for(let j=1; j<table.rows[4].cells.length; j++ ){
+        rowSum = rowSum +  parseInt(table.rows[6].cells[j].innerHTML);
+      }
+      document.getElementById("result2").innerHTML = `Row no. 6 sum : ${rowSum}`;
+
+    </script>
+  </body>
+</html>
